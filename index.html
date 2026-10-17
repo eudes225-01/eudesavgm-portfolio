@@ -863,6 +863,31 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Projet phare */
+        .project-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            background: white;
+            color: var(--text);
+            border: 2px solid var(--soft-blue);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15);
+        }
+        .featured .badge { display: inline-block; margin-bottom: 1rem; }
+        .featured h3 { font-size: 2.4rem; line-height: 1.1; margin-bottom: 0.8rem; color: var(--primary); }
+        .featured p { color: var(--text-light); margin-bottom: 1rem; }
+        .featured .featured-lead { font-size: 1.25rem; font-weight: 600; color: var(--text); }
+        .featured-link { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.9rem 1.8rem; border-radius: 50px; display: inline-block; margin-top: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+        .featured-list { list-style: none; align-self: center; background: linear-gradient(135deg, var(--soft-blue), var(--soft-purple)); border-radius: 20px; padding: 1.5rem 1.8rem; }
+        .featured-list li { padding: 0.55rem 0; color: var(--text); display: flex; gap: 0.8rem; align-items: flex-start; }
+        .featured-list i { color: var(--primary); margin-top: 0.3rem; }
+        @media (max-width: 768px) {
+            .project-card.featured { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+            .featured h3 { font-size: 1.9rem; }
+        }
     </style>
 </head>
 <body>
@@ -932,20 +957,32 @@
             <h2 class="section-title">Mes <span>réalisations</span></h2>
             <p class="section-subtitle">Quatre produits en ligne, chacun avec sa propre logique métier.</p>
             <div class="projects-grid">
+
+                <div class="project-card featured">
+                    <div class="featured-main">
+                        <span class="badge">Projet phare</span>
+                        <h3>CivilEstimator</h3>
+                        <p class="featured-lead">Du relevé de plans au devis prêt à remettre au client, en quelques clics.</p>
+                        <p>Application web de métré et d'estimation pour le BTP au Bénin, développée avec l'équipe ArchiNova. Elle calcule les quantités, le DQE, le BPU et le sous-détail des prix unitaires en francs CFA, avec les dosages, ratios d'acier et types de sols propres au pays.</p>
+                        <div class="project-tech"><span>React</span><span>Moteur de calcul modulaire</span><span>48 tests automatisés</span><span>Export PDF</span></div>
+                        <a href="https://civilestimator-archinova.store" target="_blank" class="project-link featured-link">Ouvrir l'application <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <ul class="featured-list">
+                        <li><i class="fas fa-check"></i> Métré automatique : béton, acier, coffrage, maçonnerie</li>
+                        <li><i class="fas fa-check"></i> Dosages sable et gravier, ratios d'acier par élément</li>
+                        <li><i class="fas fa-check"></i> Terrassement avec les types de sols du Bénin</li>
+                        <li><i class="fas fa-check"></i> Sous-détail des prix unitaires (Déboursé Sec × K)</li>
+                        <li><i class="fas fa-check"></i> PDF professionnel : page de garde, métré, DQE, BPU, RCCM et IFU</li>
+                        <li><i class="fas fa-check"></i> Contrôle de cohérence des charges (Eurocode)</li>
+                        <li><i class="fas fa-check"></i> Parcours guidé étape par étape, utilisable sur mobile</li>
+                    </ul>
+                </div>
                 <div class="project-card">
                     <div class="project-header"><h3>FESTY GC</h3><span class="badge">Billetterie</span></div>
                     <div class="project-body">
                         <p>Vente de pass pour une soirée étudiante : identité, paiement de 3 000 FCFA, ticket généré avec code et envoyé par email. Assistant intégré pour les participants.</p>
                         <div class="project-tech"><span>Tunnel en 2 étapes</span><span>Paiement</span><span>Ticket PDF/image</span><span>Email</span></div>
                         <a href="https://festy-gc.vercel.app" target="_blank" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header"><h3>CivilEstimateur</h3><span class="badge">Outil métier</span></div>
-                    <div class="project-body">
-                        <p>Du relevé sur plan au devis estimatif : quantités, DQE et sous-détail des prix unitaires calculés automatiquement, en FCFA.</p>
-                        <div class="project-tech"><span>Métré</span><span>DQE</span><span>FCFA</span><span>JavaScript</span></div>
-                        <a href="https://civilestimator-archinova.store" target="_blank" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="project-card">
